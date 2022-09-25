@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#009688">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Card"
+            android:layout_width="160dp"
+            android:layout_height="374dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="20dp"
+            android:background="#8BC34A"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
+            app:cardCornerRadius="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/teal_200">
+
+                <ImageView
+                    android:id="@+id/mamam"
+                    android:layout_width="34dp"
+                    android:layout_height="33dp"
+                    app:layout_constraintEnd_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView"
+                    app:srcCompat="@drawable/food" />
+
+                <TextView
+                    android:id="@+id/NamaCrad"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="Nama"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    app:layout_constraintEnd_toEndOf="@+id/mamam"
+                    app:layout_constraintStart_toStartOf="@+id/suara"
+                    app:layout_constraintTop_toBottomOf="@+id/suara" />
+
+                <TextView
+                    android:id="@+id/JenisCard"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:text="Jenis"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@+id/NamaCrad"
+                    app:layout_constraintTop_toBottomOf="@+id/NamaCrad" />
+
+                <TextView
+                    android:id="@+id/UsiaCard"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:text="Umur"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@+id/NamaCrad"
+                    app:layout_constraintTop_toBottomOf="@+id/JenisCard" />
+
+                <Button
+                    android:id="@+id/delete"
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="#8BC34A"
+                    android:gravity="center"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="0dp"
+                    android:text="Delete"
+                    app:cornerRadius="7.5dp"
+                    app:layout_constraintEnd_toEndOf="@+id/UsiaCard"
+                    app:layout_constraintStart_toStartOf="@+id/UsiaCard"
+                    app:layout_constraintTop_toBottomOf="@+id/UsiaCard" />
+
+                <Button
+                    android:id="@+id/ngedit"
+                    android:layout_width="62dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="#8BC34A"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="0dp"
+                    android:text="DETAIL"
+                    app:cornerRadius="7.5dp"
+                    app:layout_constraintEnd_toEndOf="@+id/delete"
+                    app:layout_constraintStart_toStartOf="@+id/delete"
+                    app:layout_constraintTop_toBottomOf="@+id/delete" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="114dp"
+                    android:layout_height="124dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/animal_ImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@android:drawable/btn_dialog" />
+                </androidx.cardview.widget.CardView>
+
+                <ImageButton
+                    android:id="@+id/suara"
+                    android:layout_width="34dp"
+                    android:layout_height="37dp"
+                    android:backgroundTint="#000000"
+                    app:layout_constraintStart_toStartOf="@+id/cardView"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView"
+                    app:srcCompat="@android:drawable/ic_lock_silent_mode_off"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
