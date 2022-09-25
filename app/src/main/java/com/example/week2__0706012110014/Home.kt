@@ -49,30 +49,6 @@ class Home : AppCompatActivity(), Inter{
 //        setFilter()
         izin()
     }
-    private fun jenis(jenis: String) {
-
-        Base.filter.clear()
-
-        if (jenis == "Ayam"){
-            for (data in Base.listDatahewan) {
-                if (data is Ayam) {
-                    Base.filter.add(data)
-                }
-            }
-        } else if (jenis == "Kambing") {
-            for (data in Base.listDatahewan) {
-                if (data is Kambing) {
-                    Base.filter.add(data)
-                }
-            }
-        } else {
-            for (data in Base.listDatahewan) {
-                if (data is Sapi) {
-                    Base.filter.add(data)
-                }
-            }
-        }
-    }
 
     private fun datahewan(){
         viewBind.addhewan.setOnClickListener {
@@ -85,55 +61,8 @@ class Home : AppCompatActivity(), Inter{
             putExtra("position", position)
         }
         startActivity(pindahinfo)
-    }   private fun showMenu(v: View, @MenuRes menuRes: Int) {
-        val popup = PopupMenu(this, v)
-        popup.menuInflater.inflate(menuRes, popup.menu)
-
-        popup.setOnMenuItemClickListener { menuItem: MenuItem ->
-            if (menuItem.itemId == R.id.sapii) {
-                jenis("Sapi")
-            } else if (menuItem.itemId == R.id.ayamm) {
-                jenis("Ayam")
-            } else if (menuItem.itemId == R.id.kambingg) {
-                jenis("Kambing")
-            }
-
-            if (menuItem.itemId == R.id.All) {
-                adapter.listlucu = Base.listDatahewan
-            } else {
-                adapter.listlucu = Base.filter
-            }
-            Rv()
-            adapter.notifyDataSetChanged()
-
-            if (menuItem.itemId == R.id.sapii) {
-                setUp("Sapi")
-            } else if (menuItem.itemId == R.id.ayamm) {
-                setUp("Ayam")
-            } else if (menuItem.itemId == R.id.kambingg) {
-                setUp("Kambing")
-            } else {
-                setUp("hewan")
-            }
-
-            true
-        }
-        popup.setOnDismissListener {
-            // Respond to popup being dismissed.
-        }
-        // Show the popup menu.
-        popup.show()
     }
-    private fun setUp(str: String) {
-        if (adapter.listlucu.size != 0) {
-            imageView3.visibility = View.INVISIBLE
-            tambah.visibility = View.INVISIBLE
-        } else {
-            imageView3.visibility = View.VISIBLE
-            tambah.visibility = View.VISIBLE
-            tambah.text = "Anda belum memiliki " + str
-        }
-    }
+
 
     override fun onResume() {
         super.onResume()
@@ -159,10 +88,6 @@ class Home : AppCompatActivity(), Inter{
         addhewan.setOnClickListener {
         val myIntent = Intent(this, Input::class.java)
             startActivity(myIntent)
-
-        }
-        button.setOnClickListener {
-            showMenu(it, R.menu.filter)
         }
 
     }
